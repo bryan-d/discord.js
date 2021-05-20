@@ -236,7 +236,7 @@ class Util {
    * @param {number} [guildsPerShard=1000] Number of guilds per shard
    * @returns {Promise<number>} The recommended number of shards
    */
-  static fetchRecommendedShards(token, guildsPerShard = 1000) {
+  static fetchRecommendedOptions(token, guildsPerShard = 1000) {
     if (!token) throw new DiscordError('TOKEN_MISSING');
     return fetch(`${DefaultOptions.http.api}/v${DefaultOptions.http.version}${Endpoints.botGateway}`, {
       method: 'GET',
@@ -247,7 +247,10 @@ class Util {
         if (res.status === 401) throw new DiscordError('TOKEN_INVALID');
         throw res;
       })
-      .then(data => data.shards * (1000 / guildsPerShard));
+      .then(data => ({
+        shards: data.shards * (1000 / guildsPerShard),
+        max_concurrency: data.session_start_limit?.max_concurrency || 1,
+      }));
   }
 
   /**

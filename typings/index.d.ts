@@ -1741,7 +1741,7 @@ declare module 'discord.js' {
     public static escapeStrikethrough(text: string): string;
     public static escapeSpoiler(text: string): string;
     public static cleanCodeBlockContent(text: string): string;
-    public static fetchRecommendedShards(token: string, guildsPerShard?: number): Promise<number>;
+    public static fetchRecommendedOptions(token: string, guildsPerShard?: number): Promise<number>;
     public static flatten(obj: object, ...props: { [key: string]: boolean | string }[]): object;
     public static idToBinary(num: Snowflake): string;
     public static makeError(obj: { name: string; message: string; stack: string }): Error;

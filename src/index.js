@@ -54,7 +54,7 @@ module.exports = {
   // Shortcuts to Util methods
   discordSort: Util.discordSort,
   escapeMarkdown: Util.escapeMarkdown,
-  fetchRecommendedShards: Util.fetchRecommendedShards,
+  fetchRecommendedOptions: Util.fetchRecommendedOptions,
   resolveColor: Util.resolveColor,
   resolveString: Util.resolveString,
   splitMessage: Util.splitMessage,

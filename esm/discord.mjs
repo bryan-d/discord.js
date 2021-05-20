@@ -47,7 +47,7 @@ export const {
   UserManager,
   discordSort,
   escapeMarkdown,
-  fetchRecommendedShards,
+  fetchRecommendedOptions,
   resolveColor,
   resolveString,
   splitMessage,
